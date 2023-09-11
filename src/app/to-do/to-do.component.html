@@ -1,0 +1,33 @@
+<div class="container">
+    <h2  class="bg-info" style="text-align: center;"> To-Do Application</h2>
+  <hr>
+    <form name="myForm">
+       <div class="form-group">
+           <label for="task">Enter Task</label>
+           <input type="task" class="form-control" id="task" #task  required minlength="4" maxlength="400"/> <br>
+         
+                                                           
+       </div>
+        <button (click)="addTask(task.value)"  class="btn btn-info">Add New Task</button>
+    </form>
+  <hr>
+
+ <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Task</th>
+          <th scope="col">Completed</th>
+          <th scope="col">Deleted</th>
+        
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of list">
+        <td>{{item.name}}</td>
+        <td><input id="myCheckbox " type="checkbox" ></td>
+        <td><button (click)=" removeTask(item.id)" class="btn btn-danger btn-sm">Deleted</button></td>
+      </tr>
+    
+      </tbody>
+  </table>
+</div>
